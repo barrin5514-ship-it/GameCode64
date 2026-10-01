@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GameCode64 — Code. Play. Level up.</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="engine.js" defer></script>
+  <script src="lessons.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="cabinet">
+    <header><a class="brand" href="./index.html">GAMECODE<span>64</span></a><span class="tag">CODE. PLAY. LEVEL UP.</span><span class="status">● SYSTEM ONLINE</span></header>
+    <div class="journey"><span id="chapter">01 / NAVIGATION LAB</span><label for="lessonSelect" class="sr-only">Choose a lesson</label><select id="lessonSelect"></select><span id="progressText">0 / 10 COMPLETE</span></div>
+    <progress id="progress" max="10" value="0" aria-label="Lessons completed"></progress>
+    <section class="play-panel" aria-label="Game screen">
+      <div class="screen-top"><span id="gameTitle">NAVIGATION LAB</span><span id="hud">POSITION 0, 5</span></div>
+      <div class="screen-wrap"><canvas id="game" width="640" height="384" tabindex="0" aria-label="Game board. Run your code to move the player."></canvas><div class="screen-note" id="screenNote">EDIT YOUR CODE → PRESS RUN</div></div>
+      <div class="screen-bottom"><span id="legend">◆ YOU &nbsp; ◎ DESTINATION &nbsp; ▧ WALL</span><span id="gameState">READY</span></div>
+      <div id="eventControls" hidden><button id="keyRight">→ Move right</button><button id="keyShoot">Space · Fire</button><span>After Run, focus the game and use your keyboard or these buttons.</span></div>
+    </section>
+    <div class="workbench">
+      <section class="mission"><div class="eyebrow" id="lessonNumber">MISSION 01 / 10</div><h1 id="lessonTitle"></h1><span class="concept" id="concept"></span><p id="instructions"></p><div class="objective"><span>WIN CONDITION</span><p id="objective"></p></div><button id="hintButton" class="quiet">? Reveal hint</button><p id="hint" hidden></p></section>
+      <section class="terminal" aria-label="Code terminal"><div class="terminal-top"><label for="code">PLAYER.JS</label><span>CONTROLLED JS LAB</span></div><textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="editorHelp"></textarea><div class="editor-help" id="editorHelp">A small JavaScript subset. End statements with ; · Ctrl+Enter to run.</div><div class="actions"><button id="runButton" class="primary">▶ Run Code</button><button id="resetButton" class="quiet">↺ Reset lesson</button></div><details><summary>Available commands & language</summary><p id="commands"></p><p>Supports numbers, strings, const/let, assignment, functions without parameters, and if/else. No loops, browser APIs, or full JavaScript. Movement uses whole grid cells. Coordinates start at the top left.</p></details></section>
+    </div>
+    <section id="feedback" class="feedback" role="status" aria-live="polite"><span id="feedbackLabel">TERMINAL OUTPUT</span><p id="output">Ready when you are.</p><button id="nextButton" class="primary" hidden>Next lesson →</button></section>
+    <footer><span>10 MISSIONS · 3 WORLDS · ONE CODE JOURNEY</span><button id="clearProgress" class="text-button">Clear saved progress</button></footer>
+  </main>
+</body>
+</html>
